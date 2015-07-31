@@ -1,0 +1,34 @@
+{
+	"id": "nodebb-plugin-integration-steam",
+	"name": "NodeBB Steam Integration",
+	"description": "~",
+	"url": "https://github.com/APXEOLOG/nodebb-plugin-bbcodes",
+	"library": "./library.js",
+	"scripts": [
+		"static/js/admin.js"
+	],
+	"hooks": [{
+		"hook": "static:app.load",
+		"method": "load"
+	}, {
+		"hook": "filter:auth.init",
+		"method": "extendAuth"
+	}, {
+		"hook": "filter:user.delete",
+		"method": "cleanup"
+	}, {
+		"hook": "filter:admin.header.build",
+		"method": "extendAdminMenu"
+	}, {
+		"hook": "filter:user.account",
+		"method": "extendUserAccount"
+	}],
+	"less": [
+		"static/less/style.less"
+	],
+	"templates": "./templates",
+	"nbbpm": {
+		"compatibility": "^0.7.0"
+	},
+	"languages": "./language"
+}
