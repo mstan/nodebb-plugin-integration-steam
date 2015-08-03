@@ -42,6 +42,11 @@
 				}
 			});
 
+			// Check first time
+			if (username.val().length) {
+				validateUsername(username.val());
+			}
+
 			function validateForm(callback) {
 				validationError = false;
 				validateEmail(email.val(), function() {
@@ -102,7 +107,7 @@
 				var registerBtn = $(this);
 				e.preventDefault();
 				var form = false;
-				if ($('#area-register').attr('aria-expanded') === true) {
+				if ($('#area-register').attr('aria-expanded') === "true") {
 					form = $('#form-register');
 					validateForm(function() {
 						if (!validationError) {
@@ -228,7 +233,7 @@
 					<div class="panel-group" id="select-type">
 						<div class="panel panel-default" <!-- IF allowRegistration -->style="display:block"<!-- ELSE -->style="display: none;"<!-- ENDIF allowRegistration -->>
 							<div class="panel-heading">
-								<a class="panel-title collapsed" data-toggle="collapse" data-parent="#select-type" href="#ints-register" id="area-register" aria-expanded="true">[[int-steam:fill]]</a>
+								<a class="panel-title collapsed" data-toggle="collapse" data-parent="#select-type" href="#ints-register" id="area-register" aria-expanded="true">[[steamint:fill]]</a>
 							</div>
 							<div id="ints-register" class="panel-collapse collapse in">
 								<div class="panel-body">
@@ -287,7 +292,7 @@
 									<div class="col-md-2 col-md-offset-1" style="text-align: center; margin-bottom:20px;">
 										<div class="account-picture-block text-center">
 											<img id="user-current-picture" class="user-profile-picture img-thumbnail" src="{avatarfull}"><br>
-											<span>[[int-steam:avanote]]</span>
+											<span>[[steamint:avanote]]</span>
 										</div>
 									</div>
 								</div>
@@ -295,7 +300,7 @@
 						</div>
 						<div class="panel panel-default" <!-- IF allowLocalLogin -->style="display:block"<!-- ELSE -->style="display: none;"<!-- ENDIF allowLocalLogin -->>
 							<div class="panel-heading">
-								<a class="panel-title" data-toggle="collapse" data-parent="#select-type" href="#ints-login" id="area-login" aria-expanded="false">[[int-steam:existing]]</a>
+								<a class="panel-title" data-toggle="collapse" data-parent="#select-type" href="#ints-login" id="area-login" aria-expanded="false">[[steamint:existing]]</a>
 							</div>
 							<div id="ints-login" class="panel-collapse collapse">
 								<div class="panel-body">
@@ -330,7 +335,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-4 col-lg-offset-4">
-							<button class="btn btn-primary btn-lg btn-block" id="continue" type="submit">[[int-steam:continue]]</button>
+							<button class="btn btn-primary btn-lg btn-block" id="continue" type="submit">[[steamint:continue]]</button>
 						</div>
 					</div>
 				</div>

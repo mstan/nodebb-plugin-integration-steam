@@ -23,6 +23,9 @@
   "dependencies": {
     "passport-steam": "~0.1.5"
   },
+  "nbbpm": {
+    "compatibility": "^0.7.2"
+  },
   "homepage": "https://github.com/APXEOLOG/nodebb-plugin-bbcodes",
   "scripts": {}
 }

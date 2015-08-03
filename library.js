@@ -84,7 +84,7 @@
 				} else next(null, data);
 			},
 			function(data, next) { // Get cache
-				if (req.session.authSteam) {
+				if (req.session.authSteam === undefined) {
 					next("No data cached for this sessionID");
 				} else {
 					data.cache = req.session.authSteam;
@@ -149,7 +149,7 @@
 		], function(err, data) { // Render
 			if (err !== null) {
 				winston.error("[SteamCreateNewUser]", err);
-				return res.status(400).send('[[error:int-steam-create-user-fail]]')
+				return res.status(400).send('[[steamint:register_error]]')
 			} else {
 				return res.json({ referrer: nconf.get('url') + '/' });
 			}
@@ -167,8 +167,6 @@
 			}
 		} else if (req.session.authSteam && req.session.authSteam.isLoggingIn) { // Successfully logged into existing account
 			var uid = req.session.passport.user;
-			console.log("Stemm linking for user: " + uid + " - " + req.session.authSteam.profile.id);
-			/*
 			// Steam linking
 			user.setUserField(data.uid, 'int-steam-id', data.cache.profile.id);
             user.setUserField(data.uid, 'int-steam-url', data.cache.profile._json.profileurl);
