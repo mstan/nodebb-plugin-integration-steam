@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-integration-steam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Steam extended integration plugin. Visit homepage for more details",
   "main": "library.js",
   "repository": {
