@@ -168,11 +168,11 @@
 		} else if (req.session.authSteam && req.session.authSteam.isLoggingIn) { // Successfully logged into existing account
 			var uid = req.session.passport.user;
 			// Steam linking
-			user.setUserField(data.uid, 'int-steam-id', data.cache.profile.id);
-            user.setUserField(data.uid, 'int-steam-url', data.cache.profile._json.profileurl);
+			user.setUserField(uid, 'int-steam-id', req.session.authSteam.profile.id);
+            user.setUserField(uid, 'int-steam-url', req.session.authSteam.profile._json.profileurl);
             // Not sure if there is no other way, but we need double-link between steam id and user id
-            db.setObjectField('int-steamid:uid', data.cache.profile.id, data.uid);
-        	db.setObjectField('int-uid:steamid', data.uid, data.cache.profile.id);
+            db.setObjectField('int-steamid:uid', req.session.authSteam.profile.id, uid);
+        	db.setObjectField('int-uid:steamid', uid, req.session.authSteam.profile.id);
         	// Cleanup
         	delete req.session.authSteam;
         	return res.redirect(nconf.get('url'));
