@@ -4,7 +4,7 @@
 	var winston = require('winston'),
 		meta = module.parent.require('./meta'),
 		passport = require('passport'),
-		SteamStrategy = module.parent.require('passport-steam').Strategy,
+		SteamStrategy = require('passport-steam').Strategy,
 		nconf = module.parent.require('nconf'),
 		db = module.parent.require('./database'),
 		user = module.parent.require('./user'),
