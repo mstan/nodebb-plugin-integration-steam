@@ -172,7 +172,7 @@
             user.setUserField(data.uid, 'int-steam-url', data.cache.profile._json.profileurl);
             // Not sure if there is no other way, but we need double-link between steam id and user id
             db.setObjectField('int-steamid:uid', data.cache.profile.id, data.uid);
-        	db.setObjectField('int-uid:steamid', data.uid, data.cache.profile.id);*/
+        	db.setObjectField('int-uid:steamid', data.uid, data.cache.profile.id);
         	// Cleanup
         	delete req.session.authSteam;
         	return res.redirect(nconf.get('url'));
