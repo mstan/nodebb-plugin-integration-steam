@@ -1,11 +1,11 @@
 {
   "name": "nodebb-plugin-integration-steam",
   "version": "1.0.0",
-  "description": "Steam integration plugin",
+  "description": "Steam extended integration plugin. Visit homepage for more details",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/APXEOLOG/nodebb-plugin-bbcodes.git"
+    "url": "git+https://github.com/APXEOLOG/nodebb-plugin-integration-steam.git"
   },
   "keywords": [
     "nodebb",
@@ -18,7 +18,7 @@
   },
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/APXEOLOG/nodebb-plugin-bbcodes/issues"
+    "url": "https://github.com/APXEOLOG/nodebb-plugin-integration-steam/issues"
   },
   "dependencies": {
     "passport-steam": "~0.1.5"
@@ -26,6 +26,6 @@
   "nbbpm": {
     "compatibility": "^0.7.2"
   },
-  "homepage": "https://github.com/APXEOLOG/nodebb-plugin-bbcodes",
+  "homepage": "https://github.com/APXEOLOG/nodebb-plugin-integration-steam",
   "scripts": {}
 }

@@ -1,8 +1,8 @@
 {
 	"id": "nodebb-plugin-integration-steam",
 	"name": "NodeBB Steam Integration",
-	"description": "~",
-	"url": "https://github.com/APXEOLOG/nodebb-plugin-bbcodes",
+	"description": "Extended steam integration with additional information form",
+	"url": "https://github.com/APXEOLOG/nodebb-plugin-integration-steam",
 	"library": "library.js",
 	"hooks": [{
 		"hook": "static:app.load",
