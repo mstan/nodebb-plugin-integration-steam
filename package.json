@@ -5,7 +5,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/APXEOLOG/nodebb-plugin-integration-steam.git"
+    "url": "git+https://github.com/mstan/nodebb-plugin-integration-steam.git"
   },
   "keywords": [
     "nodebb",
@@ -18,7 +18,7 @@
   },
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/APXEOLOG/nodebb-plugin-integration-steam/issues"
+    "url": "https://github.com/mstan/nodebb-plugin-integration-steam/issues"
   },
   "dependencies": {
     "passport-steam": "~0.1.5"
@@ -26,6 +26,6 @@
   "nbbpm": {
     "compatibility": "^0.7.2"
   },
-  "homepage": "https://github.com/APXEOLOG/nodebb-plugin-integration-steam",
+  "homepage": "https://github.com/mstan/nodebb-plugin-integration-steam",
   "scripts": {}
 }

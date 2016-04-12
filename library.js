@@ -1,4 +1,4 @@
-(function(module) {
+ (function(module) {
 	"use strict";
 
 	var winston = require('winston'),
@@ -17,7 +17,9 @@
 			if (data) {
 				if (data['int-steam-webKey'] && data['int-steam-webKey'].length > 0 && data['int-steam-allowLogin'] === '1') {
 					passport.use(new SteamStrategy({
+							//returnURL: nconf.get('url') + '/auth/steam/return',
 							returnURL: nconf.get('url') + '/auth/steam/return',
+							//realm: nconf.get('url'),
 							realm: nconf.get('url'),
 							apiKey: data['int-steam-webKey'],
 							passReqToCallback: true
@@ -134,6 +136,14 @@
 						next(err, data);
 					});
 				} else next(null, data);
+			},
+			//Handler for admin approval hack
+			function(data,next) {
+				if (data.registrationType === 'admin-approval') {
+					user.ban(data.uid, function() {
+						next(null,data);
+					});
+				} else next(null,data);
 			},
 			function(data, next) { // Login
 				if (data['int-steam-allowLogin'] === '1') {
